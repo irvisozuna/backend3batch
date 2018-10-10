@@ -14,7 +14,7 @@ const jsonParser = bodyParser.json();
 const PORT = process.env.PORT || 3000
 
 
-app.listen(port, () =>{
+app.listen(PORT, () =>{
     console.log('Server WORKS on port ' + PORT);
 })
 mongoose.connect('mongodb://gabo16:gabo16@ds123173.mlab.com:23173/backend');

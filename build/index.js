@@ -38,7 +38,7 @@ var app = (0, _express2.default)();
 var jsonParser = _bodyParser2.default.json();
 var PORT = process.env.PORT || 3000;
 
-app.listen(port, function () {
+app.listen(PORT, function () {
     console.log('Server WORKS on port ' + PORT);
 });
 _mongoose2.default.connect('mongodb://gabo16:gabo16@ds123173.mlab.com:23173/backend');
