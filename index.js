@@ -14,15 +14,7 @@ const jsonParser = bodyParser.json();
 const port = 3000;
 
 
-    app.use('/graphql', graphQLHTTP((req,res)=>({
-        schema,
-        graphiql: true,
-        pretty: true
-    })))
 
-app.get('/', function(req,res){
-    res.send('Hello world');
-})
 app.listen(port, () =>{
     console.log('Server WORKS on port ' + port);
 })
@@ -31,32 +23,11 @@ const db = mongoose.connection;
 db.on('error', () => console.log("failed to connect to database"))
     .once('open', ()=> console.log("Connected to the data base ", port))
 
-    app.get('/userlist', function(req, res){
-        Client.find({}).then(function(users){   
-            res.send(users);
-        })
-    })
 
 
-    app.get('/add-client', (req,res) => {
-        var client = new Client({
-            name: "CLIENTAZO",
-            lastName: "DESDE EXPRESS",
-            age: 100
-        })
 
-        client.save((err)=>{
-            if(err) throw err
-            res.send('Cliente creadoouu');
-        })
-    })
 
-    app.get('/find-client', (req,res) => {
-
-        Client.find({'name':'CLIENTAZO'}).then(function(clients){   
-            res.send(clients);
-        })
-    })
+  
 
     app.get('/register', jsonParser, (req,res) => {
 
@@ -104,14 +75,28 @@ db.on('error', () => console.log("failed to connect to database"))
         }
     })
 
-    app.get('/add-category', (req,res) => {
-        var category = new Category({
-            name: "Drama",
-            description: "CRY BIatch"
-        })
-
-        category.save((err)=>{
-            if(err) throw err
-            res.send('Categpry creadoouu');
-        })
+    ////             MIDDLEWARE
+    app.use('/graphql', (req,res,next) => {
+        const token = req.headers['authorization']
+        try{
+            req.user = verifyToken(token)
+            next()
+        }
+        catch(er){
+            res.status(401).json({
+                message: er.message
+            })
+        }
     })
+    
+
+    
+    app.use('/graphql', graphQLHTTP((req,res)=>({
+        schema,
+        graphiql: true,
+        pretty: true,
+
+        context: {
+            user: req.user
+        }
+    })))

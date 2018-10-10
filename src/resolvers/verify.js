@@ -5,8 +5,8 @@ const secret = 'esUnSecreto';
 const prefixToken = 'JWT';
 
 export const verifyToken = (token) => {
-    return new Promise((resolve,reject)=>{
-        const [prefix,payload] = token.split(' ');
+
+    const [prefix,payload] = token.split(' ');
     console.log(token);
     console.log(payload,'<<PAYLOAD');
     let user = null;
@@ -34,7 +34,7 @@ export const verifyToken = (token) => {
     if(!user){
         throw new Error('User not in Database');
     }
-    })
+
     
 
 }
