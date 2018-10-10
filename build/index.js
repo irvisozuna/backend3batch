@@ -39,14 +39,14 @@ var jsonParser = _bodyParser2.default.json();
 var PORT = process.env.PORT || 3000;
 
 app.listen(port, function () {
-    console.log('Server WORKS on port ' + port);
+    console.log('Server WORKS on port ' + PORT);
 });
 _mongoose2.default.connect('mongodb://gabo16:gabo16@ds123173.mlab.com:23173/backend');
 var db = _mongoose2.default.connection;
 db.on('error', function () {
     return console.log("failed to connect to database");
 }).once('open', function () {
-    return console.log("Connected to the data base ", port);
+    return console.log("Connected to the data base ", PORT);
 });
 
 app.get('/register', jsonParser, function (req, res) {
