@@ -36,7 +36,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = (0, _express2.default)();
 var jsonParser = _bodyParser2.default.json();
-var port = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.listen(port, function () {
     console.log('Server WORKS on port ' + port);

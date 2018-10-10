@@ -11,8 +11,7 @@ import schema from './src/graphql';
 
 const app = express();
 const jsonParser = bodyParser.json();
-const port = 3000;
-
+const PORT = process.env.PORT || 3000
 
 
 app.listen(port, () =>{
