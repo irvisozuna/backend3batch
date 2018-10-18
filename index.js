@@ -7,6 +7,7 @@ import { createToken } from './src/resolvers/create';
 import { verifyToken } from './src/resolvers/verify';
 import graphQLHTTP from 'express-graphql';
 import schema from './src/graphql';
+import cors from 'cors';
 
 
 const app = express();
@@ -24,7 +25,7 @@ db.on('error', () => console.log("failed to connect to database"))
 
 
 
-
+app.use((cors()));
 
   
 
