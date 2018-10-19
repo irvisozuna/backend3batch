@@ -29,13 +29,15 @@ app.use((cors()));
 
   
 
-    app.get('/register', jsonParser, (req,res) => {
+    app.use('/register', jsonParser, (req,res) => {
 
         console.log(req.body);
         var user = new User(req.body)
 
         user.save((err=>{
-            if(err) throw err
+            if(err){
+                console.log(err)
+            }
             res.send("usuario registrado");
         }))
 
