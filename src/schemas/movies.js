@@ -21,7 +21,7 @@ const MoviesSchema = new Schema({
         type: String,
     },
     'rank': {
-        type: Number
+        type: [Number]
     },
     'ratings': {
         type: Schema.Types.ObjectId,

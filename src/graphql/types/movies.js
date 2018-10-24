@@ -99,3 +99,13 @@ export const MovieInputType = new GRAPHQL.GraphQLInputObjectType({
         
     })
 })
+
+export const RankMovieType = new GRAPHQL.GraphQLInputObjectType({
+    name: 'addRank',
+    description: 'Add rank to Movie',
+    fields: () =>({
+        rank:{
+            type:GRAPHQL.GraphQLFloat
+        }
+    })
+})
