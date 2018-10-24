@@ -15,9 +15,11 @@ export default {
         }
     },resolve(root,params){
         const {id,data} = params
+        console.log(data)
         return Movie.findByIdAndUpdate(id,{$push:{rank:data.rank}})
             .then((movie)=>{
                 return Movie.findById(movie.id).exec()
+                
             })
     }
 }

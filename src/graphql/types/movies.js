@@ -23,7 +23,7 @@ export const MovieType = new GRAPHQL.GraphQLObjectType({
             type: GRAPHQL.GraphQLString
         },
         rank: {
-            type: GRAPHQL.GraphQLFloat
+            type: GRAPHQL.GraphQLList(GRAPHQL.GraphQLFloat)
         },
         plot : {
             type: GRAPHQL.GraphQLString
@@ -70,9 +70,6 @@ export const MovieInputType = new GRAPHQL.GraphQLInputObjectType({
         },
         director: {
             type: GRAPHQL.GraphQLString
-        },
-        rank: {
-            type: GRAPHQL.GraphQLFloat
         },
         plot : {
             type: GRAPHQL.GraphQLString
