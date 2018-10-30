@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () =>{
     console.log('Server WORKS on port ' + PORT);
 })
-mongoose.connect('mongodb://gabo16:gabo16@ds123173.mlab.com:23173/backend');
+mongoose.connect('mongodb://admin:drinker8@ds145563.mlab.com:45563/lunchapp');
 const db = mongoose.connection;
 db.on('error', () => console.log("failed to connect to database"))
     .once('open', ()=> console.log("Connected to the data base ", PORT))
