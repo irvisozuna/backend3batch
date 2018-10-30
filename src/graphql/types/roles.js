@@ -1,8 +1,8 @@
 import * as GRAPHQL from 'graphql';
 
-export const CategoryType = new GRAPHQL.GraphQLObjectType({
-    name: "Categories",
-    description : "Types of Genres",
+export const RoleType = new GRAPHQL.GraphQLObjectType({
+    name: "Roles",
+    description : "Types of Roles",
     fields : () => ({
         _id: {
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
@@ -16,9 +16,9 @@ export const CategoryType = new GRAPHQL.GraphQLObjectType({
     })
 })
 
-export const CategoryInputType = new GRAPHQL.GraphQLInputObjectType({
-    name: 'addCategories',
-    description: "Add Category",
+export const RoleInputType = new GRAPHQL.GraphQLInputObjectType({
+    name: 'addRoles',
+    description: "Add Role",
     fields : () => ({
         name: {
             type: GRAPHQL.GraphQLString
