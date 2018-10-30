@@ -12,9 +12,6 @@ export const UserType = new GRAPHQL.GraphQLObjectType({
             type: GRAPHQL.GraphQLString,
             description: "Name of the user"
         },
-        lastName : {
-            type : GRAPHQL.GraphQLString
-        },
         email : {
             type: GRAPHQL.GraphQLString
         },
@@ -24,13 +21,7 @@ export const UserType = new GRAPHQL.GraphQLObjectType({
         phone : {
             type: GRAPHQL.GraphQLString
         },
-        status : {
-            type: GRAPHQL.GraphQLString
-        },
         avatar : {
-            type: GRAPHQL.GraphQLString
-        },
-        birthDate : {
             type: GRAPHQL.GraphQLString
         }
 
@@ -45,9 +36,6 @@ export const UserInputType = new GRAPHQL.GraphQLInputObjectType({
         name: {
             type: GRAPHQL.GraphQLString
         },
-        lastName : {
-            type : GRAPHQL.GraphQLString
-        },
         email : {
             type: GRAPHQL.GraphQLString
         },
@@ -61,9 +49,6 @@ export const UserInputType = new GRAPHQL.GraphQLInputObjectType({
             type: GRAPHQL.GraphQLString
         },
         avatar : {
-            type: GRAPHQL.GraphQLString
-        },
-        birthDate : {
             type: GRAPHQL.GraphQLString
         }
     })
