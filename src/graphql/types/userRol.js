@@ -1,4 +1,6 @@
 import * as GRAPHQL from 'graphql';
+import { UserType } from "./users";
+import { RoleType } from "./roles";
 
 export const UserRoleType = new GRAPHQL.GraphQLObjectType({
     name: "UserRoles",
@@ -8,7 +10,7 @@ export const UserRoleType = new GRAPHQL.GraphQLObjectType({
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         },
         rol: {
-            type: RolType,
+            type: RoleType,
             resolve(userRol){
                 const {rol} = userRol
                 return Rol.findById(rol).exec()
@@ -17,7 +19,7 @@ export const UserRoleType = new GRAPHQL.GraphQLObjectType({
         user: {
             type: UserType,
             resolve(userRol){
-                const {user} = userRol
+                const user = userRol
                 return User.findById(user).exec()
             }
         }

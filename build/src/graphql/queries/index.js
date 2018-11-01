@@ -10,18 +10,30 @@ var _users = require('./users');
 
 var _users2 = _interopRequireDefault(_users);
 
-var _categories = require('./categories');
+var _balance = require('./balance');
 
-var _categories2 = _interopRequireDefault(_categories);
+var _balance2 = _interopRequireDefault(_balance);
 
-var _ratings = require('./ratings');
+var _companies = require('./companies');
 
-var _ratings2 = _interopRequireDefault(_ratings);
+var _companies2 = _interopRequireDefault(_companies);
 
-var _movies = require('./movies');
+var _menus = require('./menus');
 
-var _movies2 = _interopRequireDefault(_movies);
+var _menus2 = _interopRequireDefault(_menus);
+
+var _requests = require('./requests');
+
+var _requests2 = _interopRequireDefault(_requests);
+
+var _roles = require('./roles');
+
+var _roles2 = _interopRequireDefault(_roles);
+
+var _userRol = require('./userRol');
+
+var _userRol2 = _interopRequireDefault(_userRol);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _extends({}, _users2.default, _categories2.default, _ratings2.default, _movies2.default);
+exports.default = _extends({}, _users2.default, _balance2.default, _companies2.default, _menus2.default, _requests2.default, _roles2.default, _userRol2.default);

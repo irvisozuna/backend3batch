@@ -23,10 +23,7 @@ var UserSchema = new Schema({
         type: String,
         require: true
     },
-    'lastName': {
-        type: String
 
-    },
     'email': {
         type: String,
         require: true
@@ -38,17 +35,9 @@ var UserSchema = new Schema({
     'phone': {
         type: Number
     },
-    'status': {
-        type: String
-
-    },
     'avatar': {
         type: String,
-        require: true
-    },
-    'birthDate': {
-        type: Date
-
+        require: false
     }
 
 }, { collection: 'users', timestamps: true });

@@ -1,6 +1,6 @@
 import * as GRAPHQL from 'graphql';
 
-import Requests from '../../../schemas/requests';
+import Request from '../../../schemas/requests';
 import { RequestType } from '../../types/requests';
 
 

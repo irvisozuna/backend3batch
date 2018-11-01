@@ -11,7 +11,7 @@ export default{
         },
         data: {
             name: 'data',
-            type: new graphql.GraphQLNonNull(BalanceInputType)
+            type: new graphql.GraphQLNonNull(CompanyInputType)
         }
     },
     resolve(root,params){

@@ -14,15 +14,15 @@ export const RequestType = new GRAPHQL.GraphQLObjectType({
         company: {
             type: MenuType,
             resolve(menu){
-                const {menu} = menu
-                return Menu.findById(menu).exec()
+                const {menus} = menu
+                return Menu.findById(menus).exec()
             }
         },
         user: {
             type: UserType,
             resolve(user){
-                const {user} = user
-                return User.findById(user).exec()
+                const {users} = user
+                return User.findById(users).exec()
             }
         }
     })

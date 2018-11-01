@@ -18,8 +18,8 @@ export const MenuType = new GRAPHQL.GraphQLObjectType({
         company: {
             type: CompanyType,
             resolve(company){
-                const {company} = company
-                return Company.findById(company).exec()
+                const {companies} = company
+                return Company.findById(companies).exec()
             }
         },
         date: {

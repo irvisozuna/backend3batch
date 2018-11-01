@@ -1,4 +1,6 @@
 import * as GRAPHQL from 'graphql';
+import { UserType } from "./users";
+import { MenuType } from "./menus";
 
 export const BalanceType = new GRAPHQL.GraphQLObjectType({
     name: "Balance",

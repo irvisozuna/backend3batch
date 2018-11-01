@@ -2,11 +2,11 @@ import * as GRAPHQL from 'graphql';
 
 import Rol from '../../../schemas/roles';
 
-import { RolType } from '../../types/roles';
+import { RoleType } from '../../types/roles';
 
 const querySingleRol = {
 
-    type: RolType,
+    type: RoleType,
     args: {
         id:{
             name : 'ID',

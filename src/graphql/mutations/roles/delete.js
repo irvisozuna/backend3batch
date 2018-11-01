@@ -1,9 +1,9 @@
 import Rol from '../../../schemas/roles';
-import { RolType } from '../../types/roles';
+import { RoleType } from '../../types/roles';
 import * as graphql from 'graphql';
 
 export default {
-    type: RolType,
+    type: RoleType,
     args:{
         id:{
             name: 'ID',

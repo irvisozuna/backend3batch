@@ -1,12 +1,19 @@
 import Users from './users';
-import Categories from './categories';
-import Ratings from './ratings';
-import Movies from './movies';
+import Balance from './balances';
+import Company from "./companies";
+import Menu from "./menus";
+import Request from "./requests";
+import Rol from "./roles";
+import UserRole from "./userRol";
+
 
 
 export default {
     ...Users,
-    ...Categories,
-    ...Ratings,
-    ...Movies
+    ...Balance,
+    ...Company,
+    ...Menu,
+    ...Request,
+    ...Rol,
+    ...UserRole
 }

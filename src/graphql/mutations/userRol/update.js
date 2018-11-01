@@ -1,9 +1,9 @@
 import UserRol from '../../../schemas/userRol';
-import { UserRolType, UserRolInputType } from '../../types/userRol';
+import { UserRoleType, UserRoleInputType } from '../../types/userRol';
 import * as graphql from 'graphql';
 
 export default{
-    type: UserRolType,
+    type: UserRoleType,
     args:{
         id:{
             name: 'ID',
@@ -11,7 +11,7 @@ export default{
         },
         data: {
             name: 'data',
-            type: new graphql.GraphQLNonNull(UserRolInputType)
+            type: new graphql.GraphQLNonNull(UserRoleInputType)
         }
     },
     resolve(root,params){

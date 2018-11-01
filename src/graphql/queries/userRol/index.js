@@ -1,7 +1,7 @@
 import allUserRoles from './all';
-import singleUSerRol from './single';
+import singleUserRol from './single';
 
 export default {
     allUserRoles,
-    singleUSerRol
+    singleUserRol
 }

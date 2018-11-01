@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Category from './src/schemas/categories';
 import User from './src/schemas/users';
 import bodyParser from 'body-parser';
 import { createToken } from './src/resolvers/create';
@@ -18,12 +17,17 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () =>{
     console.log('Server WORKS on port ' + PORT);
 })
-mongoose.connect('mongodb://admin:drinker8@ds145563.mlab.com:45563/lunchapp');
-const db = mongoose.connection;
-db.on('error', () => console.log("failed to connect to database"))
-    .once('open', ()=> console.log("Connected to the data base ", PORT))
 
-
+    var mongodbUri ='mongodb://admin:drinker8@ds145563.mlab.com:45563/lunchapp';
+    mongoose.connect(mongodbUri, {
+      useNewUrlParser: true
+    })
+    var conn = mongoose.connection;    
+    conn.on('error', console.error.bind(console, 'connection error:'));  
+     
+    conn.once('open', () =>{
+     console.log('connected to adatabase')                       
+    });
 
 app.use((cors()));
 
@@ -81,7 +85,7 @@ app.use((cors()));
     app.use('/graphql', (req,res,next) => {
         const token = req.headers['authorization']
         try{
-            req.user = verifyToken(token)
+            //req.user = verifyToken(token)
             next()
         }
         catch(er){

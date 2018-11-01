@@ -8,10 +8,6 @@ var _mongoose = require('mongoose');
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-var _categories = require('./src/schemas/categories');
-
-var _categories2 = _interopRequireDefault(_categories);
-
 var _users = require('./src/schemas/users');
 
 var _users2 = _interopRequireDefault(_users);
@@ -45,7 +41,8 @@ var PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
     console.log('Server WORKS on port ' + PORT);
 });
-_mongoose2.default.connect('mongodb://gabo16:gabo16@ds123173.mlab.com:23173/backend');
+_mongoose2.default.connect('mongodb://irvis:drinker8@ds145563.mlab.com:45563/lunchapp', { useNewUrlParser: true });
+
 var db = _mongoose2.default.connection;
 db.on('error', function () {
     return console.log("failed to connect to database");

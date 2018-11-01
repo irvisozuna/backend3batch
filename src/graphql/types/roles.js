@@ -1,9 +1,10 @@
 import * as GRAPHQL from 'graphql';
 
+
 export const RoleType = new GRAPHQL.GraphQLObjectType({
     name: "Roles",
     description : "Types of Roles",
-    fields : () => ({
+    fields: () => ({
         _id: {
             type: GRAPHQL.GraphQLNonNull(GRAPHQL.GraphQLID)
         },

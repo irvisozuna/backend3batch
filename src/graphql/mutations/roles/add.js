@@ -1,14 +1,14 @@
 import Rol from '../../../schemas/roles';
-import { RolType ,RolInputType } from '../../types/roles';
+import { RoleType ,RoleInputType } from '../../types/roles';
 import * as graphql from 'graphql';
 
 export default {
 
-    type:RolType,
+    type:RoleType,
     args:{
         data:{
             name:'data',
-            type: new graphql.GraphQLNonNull(RolInputType)
+            type: new graphql.GraphQLNonNull(RoleInputType)
         }
     },
     resolve(root,params){
