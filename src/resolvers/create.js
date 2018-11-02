@@ -32,7 +32,7 @@ export const createToken = (email, password) => {
         return compare;
 
     },(err)=>{
-        console.log("Hola mundo");
+        console.log(err);
     }).catch((err)=>console.log(err))
 
     return user

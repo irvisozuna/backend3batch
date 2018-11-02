@@ -25,7 +25,7 @@ export const MenuType = new GRAPHQL.GraphQLObjectType({
             type: GRAPHQL.GraphQLString
         },
         price: {
-            type: GRAPHQL.GraphQLFloat
+            type: GRAPHQL.GraphQLString
         }
     })
 })
@@ -50,7 +50,7 @@ export const MenuInputType = new GRAPHQL.GraphQLInputObjectType({
             type: GRAPHQL.GraphQLString
         },
         price: {
-            type: GRAPHQL.GraphQLFloat
+            type: GRAPHQL.GraphQLString
         }
     })
 })
