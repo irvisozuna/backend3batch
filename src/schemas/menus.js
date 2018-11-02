@@ -18,6 +18,9 @@ const MenusSchema = new Schema({
     },
     'image': {
         type: String
+    },
+    'price': {
+        type: Number
     }
 },{collection: 'menus', timestamps: true});
 

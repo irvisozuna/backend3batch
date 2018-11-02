@@ -15,7 +15,7 @@ export default{
         }
     },
     resolve(root,params){
-        return Menu.findByIdAndUpdate(params.id,{$set:{...params.data}})
+        return Menu.findOneAndUpdate(params.id,{$set:{...params.data}})
                         .then((menu)=> Menu.findById(menu.id).exec())
                         .catch((err) => new Error('Couldnt update menu data', err))
     }

@@ -11,7 +11,7 @@ import cors from 'cors';
 
 const app = express();
 const jsonParser = bodyParser.json();
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8000
 
 
 app.listen(PORT, () =>{
@@ -50,13 +50,24 @@ app.use((cors()));
     app.use('/login', jsonParser, (req,res ) => {
         if(req.method === 'POST'){
             const token = createToken(req.body.email, req.body.password).then((token) => {
-                res.status(200).json({token})
+                if(token){
+                    res.status(200).json({token})
+                }else{
+                    res.status(202).json({
+                        message: 'Login Failed, INVALID CREDENTIALS'
+                    })
+                }
+                
+            },(err)=>{
+                res.status(403).json({
+                    message: 'Login Failed, INVALID CREDENTIALS'
+                })
             }).catch((err)=> {
-                console.log(err)
                 res.status(403).json({
                     message: 'Login Failed, INVALID CREDENTIALS'
                 })
             })
+            
         }
     })
 

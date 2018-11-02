@@ -15,7 +15,7 @@ export default{
         }
     },
     resolve(root,params){
-        return Company.findByIdAndUpdate(params.id,{$set:{...params.data}})
+        return Company.findOneAndUpdate(params.id,{$set:{...params.data}})
                         .then((company)=> Company.findById(company.id).exec())
                         .catch((err) => new Error('Couldnt update company data', err))
     }

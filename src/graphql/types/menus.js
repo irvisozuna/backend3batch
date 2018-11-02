@@ -17,13 +17,15 @@ export const MenuType = new GRAPHQL.GraphQLObjectType({
         },
         company: {
             type: CompanyType,
-            resolve(company){
-                const {companies} = company
-                return Company.findById(companies).exec()
+            resolve(data){
+                return Company.findById(data.company).exec()
             }
         },
         date: {
             type: GRAPHQL.GraphQLString
+        },
+        price: {
+            type: GRAPHQL.GraphQLFloat
         }
     })
 })
@@ -46,6 +48,9 @@ export const MenuInputType = new GRAPHQL.GraphQLInputObjectType({
         },
         date: {
             type: GRAPHQL.GraphQLString
+        },
+        price: {
+            type: GRAPHQL.GraphQLFloat
         }
     })
 })

@@ -28,10 +28,11 @@ export const createToken = (email, password) => {
                 }
             })
         })
-        console.log(compare,'<<<<<C')
 
         return compare;
 
+    },(err)=>{
+        console.log("Hola mundo");
     }).catch((err)=>console.log(err))
 
     return user
